@@ -1,6 +1,10 @@
 # Simulador de Avaliações
 
-Este código em Python representa um sistema que simula avaliações, oferecendo uma gama de funcionalidades essenciais para uma experiência de usuário completa e segura. Vou detalhar suas principais características e destacar suas medidas de segurança e validação:
+Esse Projeto foi iniciado e desenvolvido em um outro repositório de minha autoria [Exercicios e Projetos em Python](https://github.com/LMolinaro01/Exercicios-e-Projetos-em-Python). Portanto, as commits iniciais estão armazenadas nele.
+
+---
+
+O código fonte em Python representa um sistema que simula avaliações, oferecendo uma gama de funcionalidades essenciais para uma experiência de usuário completa e segura. Vou detalhar suas principais características e destacar suas medidas de segurança e validação:
 
 1. **Banco de Dados SQLite com Prevenção contra SQL Injection**: Utilizando um banco de dados SQLite3, o programa armazena localmente informações, como dados dos alunos, senhas, questões da prova e pontuações. Além disso, implementa medidas eficazes para prevenir ataques de [*SQL Injection*](#sqlinjection), garantindo a integridade dos dados.
 
