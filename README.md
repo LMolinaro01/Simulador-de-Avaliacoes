@@ -2,13 +2,14 @@
 
 Esse Projeto foi iniciado e desenvolvido em um outro repositório de minha autoria [Exercicios e Projetos em Python](https://github.com/LMolinaro01/Exercicios-e-Projetos-em-Python). Portanto, as commits iniciais estão armazenadas nele.
 
-## Execução do Programa:
+## Execução do Programa: (Clique na Imagem para ver o vídeo)
   
 <p align="center">
   <a href="https://www.youtube.com/watch?v=2irwlujDGsA" target = "_blank">
     <img src="https://img.youtube.com/vi/2irwlujDGsA/0.jpg" alt="Video no Youtube">
   </a>
 </p>
+
 ---
 
 O código fonte em Python representa um sistema que simula avaliações, oferecendo uma gama de funcionalidades essenciais para uma experiência de usuário completa e segura. Vou detalhar suas principais características e destacar suas medidas de segurança e validação:
