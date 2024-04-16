@@ -1,6 +1,6 @@
-# Simulador de Avaliações
+# Simulador de Avaliações em Python
 
-Este projeto teve sua origem e grande parte de seu desenvolvimento concebidos em um repositório anterior, mantido por mim, intitulado [Exercicios e Projetos em Python](https://github.com/LMolinaro01/Exercicios-e-Projetos-em-Python). O histórico de commits permanecem registrada neste repositório precursor, fornecendo um contexto para o desenvolvimento subsequente. Portanto, os marcos iniciais e a essência fundacional do projeto residem nesse repositório anterior, refletindo o processo criativo e a evolução do conceito até sua atual forma refinada.
+- Este projeto teve sua origem e grande parte de seu desenvolvimento concebidos em um repositório anterior, de minha autoria, intitulado [Exercicios e Projetos em Python](https://github.com/LMolinaro01/Exercicios-e-Projetos-em-Python). O histórico de commits permanecem registrada neste repositório precursor, fornecendo um contexto para o desenvolvimento subsequente. Portanto, os marcos iniciais e a essência fundacional do projeto residem nesse repositório anterior, refletindo o processo criativo e a evolução do conceito até sua atual forma refinada.
 
 ## Execução do Programa:
   
