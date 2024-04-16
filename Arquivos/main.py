@@ -1,4 +1,4 @@
-#adicionar uma opção para o professor inserir as questões, ver se há duplicatas e inserir um gabarito referente a questão
+#adicionar uma opção para o professor inserir as questões, ver se há duplicatas e inserir um gabarito referente a questão.
 
 import random
 import sqlite3
