@@ -2,7 +2,7 @@
 
 Esse Projeto foi iniciado e desenvolvido em um outro repositório de minha autoria [Exercicios e Projetos em Python](https://github.com/LMolinaro01/Exercicios-e-Projetos-em-Python). Portanto, as commits iniciais estão armazenadas nele.
 
-## Execução do Programa: (Clique na Imagem para ver o vídeo)
+## Execução do Programa:
   
 <p align="center">
   <a href="https://www.youtube.com/watch?v=2irwlujDGsA" target = "_blank">
