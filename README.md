@@ -2,6 +2,10 @@
 
 Esse Projeto foi iniciado e desenvolvido em um outro repositório de minha autoria [Exercicios e Projetos em Python](https://github.com/LMolinaro01/Exercicios-e-Projetos-em-Python). Portanto, as commits iniciais estão armazenadas nele.
 
+- Execução do Programa:
+  
+ [![Video no Youtube](https://img.youtube.com/vi/2irwlujDGsA/0.jpg)](https://www.youtube.com/watch?v=2irwlujDGsA)
+
 ---
 
 O código fonte em Python representa um sistema que simula avaliações, oferecendo uma gama de funcionalidades essenciais para uma experiência de usuário completa e segura. Vou detalhar suas principais características e destacar suas medidas de segurança e validação:
@@ -20,52 +24,6 @@ O código fonte em Python representa um sistema que simula avaliações, oferece
 
 7. **Cadastro de Questões**: O código possui uma função que permite adicionar questões ao banco de dados.
 
-8. **Telas Principais**:
-   - **Tela Inicial**: Apresenta as opções principais, como cadastro, realização de prova e visualização de pontuações.
-     
-    ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/2da75ebb-a158-40aa-a7a0-663efd4aedb2)
-
-    ---
-   
-   - **Tela de Cadastro**: Permite que novos alunos se cadastrem fornecendo nome e senha.
-     
-    ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/ccc186f5-f629-465a-a9f4-5c38221e4d62)
-    ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/33a2e786-b71c-4dba-af98-3b729cf8aab0)
-    ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/c6e5171f-1508-42d3-b2cf-0a7ddff16cdf)
-
-    ---
-   
-   - **Tela de Login**: Permite que alunos cadastrados realizem login para acessar a prova.
-     
-     ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/c4da515d-d84f-4f75-bef0-543bb9c7ce8e)
-
-     ---
-     
-   - **Tela da Prova**: Apresenta as questões da prova, permitindo que o aluno selecione suas respostas.
-     
-     ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/ee72ebd3-6862-46e1-a6bb-ebd0dd0000c4)
-     
-     ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/3f36950d-0207-4ee1-8b45-fa7c0e1a95cf)
-
-     ---
-     
-   - **Tela de Resultado**: Após finalizar a prova, exibe a pontuação obtida e oferece opções para visualizar a resolução das questões ou voltar para a tela inicial.
-
-     ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/426387dd-2aee-4bf7-a5c7-3f37d9e5b5c2)
-
-      ---
-     
-   - **Tela de Gabarito/Resolução**: Apresenta as questões da prova com as respostas corretas após a conclusão da prova.
-
-     ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/ffb947b7-6e99-4873-a20f-6ea5b61729b6)
-
-      ---
-     
-   - **Tela de Pontuações**: Exibe a pontuação dos alunos.
-
-     ![image](https://github.com/LMolinaro01/Projetos-em-Python/assets/126402616/0c8a791c-6b6e-4b28-ba16-7d3a1b14a3e3)
-
-      ---
 
 Em resumo, este código implementa um sistema completo de simulador de avaliações, desde o cadastro de alunos até a realização e correção de provas, utilizando uma interface gráfica simples e agradável.
 
