@@ -331,11 +331,11 @@ def finalizarProva(variaveis_resposta, assinaturaNome, cursoP):
     connection.commit()
 
     label_pontuacao = tkinter.Label(
-        janelaResultProva, text=f"""Prova Concluída, Parabéns pelo esforço {assinaturaNome.get()}!""")
+        janelaResultProva, text=f"""Prova Concluída, Parabéns pelo esforço {assinaturaNome.get()}!""", font="Consolas 13 bold")
     label_pontuacao.grid(row=0, column=0, padx=10, pady=10, sticky='ew')
 
-    image1 = Image.open("logoEstacio.png")
-    width, height = 200, 200
+    image1 = Image.open("Arquivos\logoEstacio.png")
+    width, height = 450, 300
     image1.thumbnail((width, height))
     test = ImageTk.PhotoImage(image1)
     label1 = tkinter.Label(janelaResultProva, image=test)
@@ -343,7 +343,7 @@ def finalizarProva(variaveis_resposta, assinaturaNome, cursoP):
     label1.grid(row=1, column=0, padx=10, pady=10, sticky='ew')
 
     label_pontuacao = tkinter.Label(
-        janelaResultProva, text=f"Sua Pontuação Final: {pontuacao}/3")
+        janelaResultProva, text=f"Sua Pontuação Final: {pontuacao}/3",font="Consolas 10")
     label_pontuacao.grid(row=2, column=0, padx=10, pady=10, sticky='ew')
 
     botao_Resposta = tkinter.Button(
@@ -431,3 +431,5 @@ telaInicial()
 cursor.execute("SELECT * from Participantes")
 row = cursor.fetchall()
 print(row)
+
+finalizarProva()
