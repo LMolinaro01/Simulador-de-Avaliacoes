@@ -42,13 +42,15 @@ def telaInicial():
     root = tkinter.Tk()
     root.title("Página Inicial")
     root.resizable(False, False)
-    root.geometry("300x500")
+    root.focus_force()
 
-    label = tkinter.Label(root, text="Bem vindo ao Simulador de Avaliações!")
+    #root.geometry("300x500")
+
+    label = tkinter.Label(root, text="Bem vindo ao Simulador de Avaliações!", font="Consolas 13")
     label.grid(row=0, column=1, pady=10)
 
-    image1 = Image.open("logoEstacio2.png")
-    width, height = 200, 200
+    image1 = Image.open("Arquivos\logoEstacio2.png")
+    width, height = 500, 300
     image1.thumbnail((width, height))
     test = ImageTk.PhotoImage(image1)
     label1 = tkinter.Label(root, image=test)
@@ -56,20 +58,21 @@ def telaInicial():
     label1.grid(row=1, column=1, pady=10, padx=47)
 
     button = tkinter.Button(root, text="Cadastre-se",
-                            bg="#009FD6", fg="white", command=abrirJanelaAluno)
+                            bg="#3A8E9E", fg="white",
+                            font="Consolas 10", command=abrirJanelaAluno)
     # sticky='ew' -> estica o botao horizontalmente
     button.grid(row=2, column=1, padx=10, pady=10, sticky='ew')
 
     botao_prova = tkinter.Button(
-        root, text="Realizar Prova", bg="#009FD6", fg="white", command=validarJanelaProva)
+        root, text="Realizar Prova", bg="#47ADC0", fg="white", font="Consolas 10",command=validarJanelaProva)
     botao_prova.grid(row=3, column=1, padx=10, pady=10, sticky='ew')
 
     botao_tabela = tkinter.Button(
-        root, text="Ver Pontuações", bg="#009FD6", fg="white", command=exibirTabelaParticipantes)
+        root, text="Ver Pontuações", bg="#51C6DB", fg="white", font="Consolas 10",command=exibirTabelaParticipantes)
     botao_tabela.grid(row=4, column=1, padx=10, pady=10, sticky='ew')
 
     button = tkinter.Button(root, text="Sair do Programa",
-                            bg="#009FD6", fg="white", command=lambda: root.destroy())
+                            bg="#4CBACF", fg="white", font="Consolas 10",command=lambda: root.destroy())
     button.grid(row=5, column=1, padx=10, pady=10,
                 sticky='e')  # stiky e vai pra direita
 
@@ -105,7 +108,7 @@ def exibirTabelaParticipantes():
 
     tv.pack()
 
-    botao_fechar = tkinter.Button(janela_tabela, text="Voltar", bg="#009FD6", fg="white", command=lambda: [
+    botao_fechar = tkinter.Button(janela_tabela, text="Voltar", bg="#009FD6", fg="white", font="Consolas 10",command=lambda: [
                                   janela_tabela.destroy(), root.deiconify()])
     botao_fechar.grid(row=1, column=0, padx=10, pady=10, sticky="ew")
 
@@ -142,11 +145,11 @@ def janelaAluno():
     senha.grid(row=1, column=1, padx=10, pady=15)
 
     botao_cadastrar = tkinter.Button(janela2, text="Cadastre-se", bg="#009FD6",
-                                     fg="white", command=lambda: verificarCadastroAluno(nome.get(), senha.get()))
+                                     fg="white", font="Consolas 10",command=lambda: verificarCadastroAluno(nome.get(), senha.get()))
     botao_cadastrar.grid(row=3, column=1, padx=10, pady=10, sticky='ew')
 
     botao_voltar = tkinter.Button(janela2, text="Voltar para Tela Inicial",
-                                  bg="#009FD6", fg="white", command=lambda: voltarTelaInicial_Cadastro(janela2))
+                                  bg="#009FD6", fg="white", font="Consolas 10",command=lambda: voltarTelaInicial_Cadastro(janela2))
     botao_voltar.grid(row=4, column=1, padx=10, pady=10, sticky='ew')
 
 
@@ -229,11 +232,11 @@ def validarJanelaProva():
     senha.grid(row=1, column=1, padx=10, pady=15)
 
     botao_cadastrar = tkinter.Button(janelaValidProva, text="Realize seu Login",
-                                     bg="#009FD6", fg="white", command=lambda: verificarLogin(nome.get(), senha.get()))
+                                     bg="#009FD6", fg="white", font="Consolas 10",command=lambda: verificarLogin(nome.get(), senha.get()))
     botao_cadastrar.grid(row=3, column=1, padx=10, pady=10, sticky='ew')
 
     botao_voltar = tkinter.Button(janelaValidProva, text="Voltar para Tela Inicial",
-                                  bg="#009FD6", fg="white", command=lambda: voltarTelaInicialLogin())
+                                  bg="#009FD6", fg="white", font="Consolas 10",command=lambda: voltarTelaInicialLogin())
     botao_voltar.grid(row=4, column=1, padx=10, pady=10, sticky='ew')
 
 # TELA DA PROVA
@@ -287,7 +290,7 @@ def abrirJanelaProva():
                          padx=10, pady=10, sticky='ew')
 
     botao_finalizar = tkinter.Button(janelaProva, text="Concluir Prova", bg="#009FD6", fg="white",
-                                     command=lambda: verificarFimProva(variaveis_resposta, assinaturaNome, cursoP))
+                                     font="Consolas 10",command=lambda: verificarFimProva(variaveis_resposta, assinaturaNome, cursoP))
     botao_finalizar.grid(row=len(questoes)*8+1, column=1,
                          padx=10, pady=10, sticky='ew')
 
@@ -334,15 +337,15 @@ def finalizarProva(variaveis_resposta, assinaturaNome, cursoP):
     label_pontuacao.grid(row=2, column=0, padx=10, pady=10, sticky='ew')
 
     botao_Resposta = tkinter.Button(
-        janelaResultProva, text="Resolução das Questões", bg="#009FD6", fg="white", command=ResolucaoProva)
+        janelaResultProva, text="Resolução das Questões", bg="#009FD6", fg="white", font="Consolas 10",command=ResolucaoProva)
     botao_Resposta.grid(row=3, column=0, padx=10, pady=10, sticky='ew')
 
-    button = tkinter.Button(janelaResultProva, text="Tela Inicial", bg="#009FD6", fg="white", command=lambda: [
+    button = tkinter.Button(janelaResultProva, text="Tela Inicial", bg="#009FD6", fg="white",font="Consolas 10", command=lambda: [
                             (janelaResultProva.destroy()), root.deiconify(), janelaProva.destroy()])
     button.grid(row=4, column=0, padx=10, pady=10, sticky='ew')
 
     button = tkinter.Button(janelaResultProva, text="Sair do Programa", bg="#009FD6",
-                            fg="white", command=lambda: [(janelaResultProva.destroy()), janelaProva.destroy()])
+                            fg="white", font="Consolas 10",command=lambda: [(janelaResultProva.destroy()), janelaProva.destroy()])
     button.grid(row=5, column=0, padx=10, pady=10, sticky='ew')
 
 
