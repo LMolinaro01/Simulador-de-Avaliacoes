@@ -47,7 +47,7 @@ def telaInicial():
     label = tkinter.Label(root, text="Bem vindo ao Simulador de Avaliações!")
     label.grid(row=0, column=1, pady=10)
 
-    image1 = Image.open("Arquivos\logoEstacio2.png")
+    image1 = Image.open("logoEstacio2.png")
     width, height = 200, 200
     image1.thumbnail((width, height))
     test = ImageTk.PhotoImage(image1)
@@ -138,7 +138,7 @@ def janelaAluno():
     label_senha = tkinter.Label(janela2, text="Senha:")
     label_senha.grid(row=1, column=0, padx=10, pady=15)
     textosenha = tkinter.StringVar()
-    senha = tkinter.Entry(janela2, textvariable=textosenha, show="*")
+    senha = tkinter.Entry(janela2, textvariable=textosenha)
     senha.grid(row=1, column=1, padx=10, pady=15)
 
     botao_cadastrar = tkinter.Button(janela2, text="Cadastre-se", bg="#009FD6",
@@ -225,7 +225,7 @@ def validarJanelaProva():
     label_senha = tkinter.Label(janelaValidProva, text="Senha:")
     label_senha.grid(row=1, column=0, padx=10, pady=15)
     textosenha = tkinter.StringVar()
-    senha = tkinter.Entry(janelaValidProva, textvariable=textosenha, show="*")
+    senha = tkinter.Entry(janelaValidProva, textvariable=textosenha)
     senha.grid(row=1, column=1, padx=10, pady=15)
 
     botao_cadastrar = tkinter.Button(janelaValidProva, text="Realize seu Login",
