@@ -1,3 +1,5 @@
+#fazer nova janela antes da inicial (area aluno/professor)
+
 import random
 import sqlite3
 import tkinter
@@ -42,15 +44,13 @@ def telaInicial():
     root = tkinter.Tk()
     root.title("Página Inicial")
     root.resizable(False, False)
-    root.focus_force()
+    root.geometry("300x500")
 
-    #root.geometry("300x500")
-
-    label = tkinter.Label(root, text="Bem vindo ao Simulador de Avaliações!", font="Consolas 13")
+    label = tkinter.Label(root, text="Bem vindo ao Simulador de Avaliações!")
     label.grid(row=0, column=1, pady=10)
 
     image1 = Image.open("Arquivos\logoEstacio2.png")
-    width, height = 500, 300
+    width, height = 200, 200
     image1.thumbnail((width, height))
     test = ImageTk.PhotoImage(image1)
     label1 = tkinter.Label(root, image=test)
@@ -58,21 +58,20 @@ def telaInicial():
     label1.grid(row=1, column=1, pady=10, padx=47)
 
     button = tkinter.Button(root, text="Cadastre-se",
-                            bg="#3A8E9E", fg="white",
-                            font="Consolas 10", command=abrirJanelaAluno)
+                            bg="#009FD6", fg="white", command=abrirJanelaAluno)
     # sticky='ew' -> estica o botao horizontalmente
     button.grid(row=2, column=1, padx=10, pady=10, sticky='ew')
 
     botao_prova = tkinter.Button(
-        root, text="Realizar Prova", bg="#47ADC0", fg="white", font="Consolas 10",command=validarJanelaProva)
+        root, text="Realizar Prova", bg="#009FD6", fg="white", command=validarJanelaProva)
     botao_prova.grid(row=3, column=1, padx=10, pady=10, sticky='ew')
 
     botao_tabela = tkinter.Button(
-        root, text="Ver Pontuações", bg="#51C6DB", fg="white", font="Consolas 10",command=exibirTabelaParticipantes)
+        root, text="Ver Pontuações", bg="#009FD6", fg="white", command=exibirTabelaParticipantes)
     botao_tabela.grid(row=4, column=1, padx=10, pady=10, sticky='ew')
 
     button = tkinter.Button(root, text="Sair do Programa",
-                            bg="#4CBACF", fg="white", font="Consolas 10",command=lambda: root.destroy())
+                            bg="#009FD6", fg="white", command=lambda: root.destroy())
     button.grid(row=5, column=1, padx=10, pady=10,
                 sticky='e')  # stiky e vai pra direita
 
@@ -108,7 +107,7 @@ def exibirTabelaParticipantes():
 
     tv.pack()
 
-    botao_fechar = tkinter.Button(janela_tabela, text="Voltar", bg="#009FD6", fg="white", font="Consolas 10",command=lambda: [
+    botao_fechar = tkinter.Button(janela_tabela, text="Voltar", bg="#009FD6", fg="white", command=lambda: [
                                   janela_tabela.destroy(), root.deiconify()])
     botao_fechar.grid(row=1, column=0, padx=10, pady=10, sticky="ew")
 
@@ -125,36 +124,32 @@ def janelaAluno():
 
     global janela2
     janela2 = tkinter.Tk()
-    janela2.geometry("480x400")
+    janela2.geometry("250x400")
     janela2.resizable(False, False)
 
     janela2.title("Cadastro Aluno")
 
-    label = tkinter.Label(
-        janela2, text="Preencha os campos a seguir", font="Consolas 13 bold")
-    label.grid(row=0, column=1, pady=35, sticky='ew')
-
     # nome
-    label_nome = tkinter.Label(janela2, text="Nome:", font="Consolas 10")
-    label_nome.grid(row=1, column=0, padx=10, pady=15, sticky='ew')
+    label_nome = tkinter.Label(janela2, text="Nome:")
+    label_nome.grid(row=0, column=0, padx=10, pady=15)
     textoNome = tkinter.StringVar()
     nome = tkinter.Entry(janela2, textvariable=textoNome)
-    nome.grid(row=1, column=1, padx=18, pady=15, sticky='ew')
+    nome.grid(row=0, column=1, padx=10, pady=15)
 
     # senha
-    label_senha = tkinter.Label(janela2, text="Senha:", font="Consolas 10")
-    label_senha.grid(row=2, column=0, padx=10, pady=15, sticky='ew')
+    label_senha = tkinter.Label(janela2, text="Senha:")
+    label_senha.grid(row=1, column=0, padx=10, pady=15)
     textosenha = tkinter.StringVar()
     senha = tkinter.Entry(janela2, textvariable=textosenha, show="*")
-    senha.grid(row=2, column=1, padx=18, pady=15, sticky='ew')
+    senha.grid(row=1, column=1, padx=10, pady=15)
 
     botao_cadastrar = tkinter.Button(janela2, text="Cadastre-se", bg="#009FD6",
-                                     fg="white", font="Consolas 10",command=lambda: verificarCadastroAluno(nome.get(), senha.get()))
-    botao_cadastrar.grid(row=3, column=1, padx=18, pady=10, sticky='ew')
+                                     fg="white", command=lambda: verificarCadastroAluno(nome.get(), senha.get()))
+    botao_cadastrar.grid(row=3, column=1, padx=10, pady=10, sticky='ew')
 
     botao_voltar = tkinter.Button(janela2, text="Voltar para Tela Inicial",
-                                  bg="#009FD6", fg="white", font="Consolas 10",command=lambda: voltarTelaInicial_Cadastro(janela2))
-    botao_voltar.grid(row=5, column=1, padx=100, pady=10, sticky='ew')
+                                  bg="#009FD6", fg="white", command=lambda: voltarTelaInicial_Cadastro(janela2))
+    botao_voltar.grid(row=4, column=1, padx=10, pady=10, sticky='ew')
 
 
 def voltarTelaInicial_Cadastro(janela2):
@@ -218,36 +213,30 @@ def validarJanelaProva():
 
     global janelaValidProva
     janelaValidProva = tkinter.Tk()
-    janelaValidProva.geometry("470x400")
+    janelaValidProva.geometry("250x400")
     janelaValidProva.title("Faça seu Login")
-    janelaValidProva.resizable(False, False)
-
-
-    label = tkinter.Label(
-        janelaValidProva, text="Realize seu Login", font="Consolas 16 bold")
-    label.grid(row=0, column=1, pady=35, sticky='ew')
 
     # nome
-    label_nome = tkinter.Label(janelaValidProva, text="Nome:", font="Consolas 10")
-    label_nome.grid(row=1, column=0, padx=10, pady=15, sticky='ew')
+    label_nome = tkinter.Label(janelaValidProva, text="Nome:")
+    label_nome.grid(row=0, column=0, padx=10, pady=15)
     textoNome = tkinter.StringVar()
     nome = tkinter.Entry(janelaValidProva, textvariable=textoNome)
-    nome.grid(row=1, column=1, padx=18, pady=15, sticky='ew')
+    nome.grid(row=0, column=1, padx=10, pady=15)
 
     # senha
-    label_senha = tkinter.Label(janelaValidProva, text="Senha:", font="Consolas 10")
-    label_senha.grid(row=2, column=0, padx=10, pady=15, sticky='ew')
+    label_senha = tkinter.Label(janelaValidProva, text="Senha:")
+    label_senha.grid(row=1, column=0, padx=10, pady=15)
     textosenha = tkinter.StringVar()
     senha = tkinter.Entry(janelaValidProva, textvariable=textosenha, show="*")
-    senha.grid(row=2, column=1, padx=18, pady=15, sticky='ew')
+    senha.grid(row=1, column=1, padx=10, pady=15)
 
     botao_cadastrar = tkinter.Button(janelaValidProva, text="Realize seu Login",
-                                     bg="#009FD6", fg="white", font="Consolas 10",command=lambda: verificarLogin(nome.get(), senha.get()))
-    botao_cadastrar.grid(row=3, column=1, padx=18, pady=10, sticky='ew')
+                                     bg="#009FD6", fg="white", command=lambda: verificarLogin(nome.get(), senha.get()))
+    botao_cadastrar.grid(row=3, column=1, padx=10, pady=10, sticky='ew')
 
     botao_voltar = tkinter.Button(janelaValidProva, text="Voltar para Tela Inicial",
-                                  bg="#009FD6", fg="white", font="Consolas 10",command=lambda: voltarTelaInicialLogin())
-    botao_voltar.grid(row=5, column=1, padx=100, pady=10, sticky='ew')
+                                  bg="#009FD6", fg="white", command=lambda: voltarTelaInicialLogin())
+    botao_voltar.grid(row=4, column=1, padx=10, pady=10, sticky='ew')
 
 # TELA DA PROVA
 def abrirJanelaProva():
@@ -300,7 +289,7 @@ def abrirJanelaProva():
                          padx=10, pady=10, sticky='ew')
 
     botao_finalizar = tkinter.Button(janelaProva, text="Concluir Prova", bg="#009FD6", fg="white",
-                                     font="Consolas 10",command=lambda: verificarFimProva(variaveis_resposta, assinaturaNome, cursoP))
+                                     command=lambda: verificarFimProva(variaveis_resposta, assinaturaNome, cursoP))
     botao_finalizar.grid(row=len(questoes)*8+1, column=1,
                          padx=10, pady=10, sticky='ew')
 
@@ -331,11 +320,11 @@ def finalizarProva(variaveis_resposta, assinaturaNome, cursoP):
     connection.commit()
 
     label_pontuacao = tkinter.Label(
-        janelaResultProva, text=f"""Prova Concluída, Parabéns pelo esforço {assinaturaNome.get()}!""", font="Consolas 13 bold")
+        janelaResultProva, text=f"""Prova Concluída, Parabéns pelo esforço {assinaturaNome.get()}!""")
     label_pontuacao.grid(row=0, column=0, padx=10, pady=10, sticky='ew')
 
-    image1 = Image.open("Arquivos\logoEstacio.png")
-    width, height = 450, 300
+    image1 = Image.open("logoEstacio.png")
+    width, height = 200, 200
     image1.thumbnail((width, height))
     test = ImageTk.PhotoImage(image1)
     label1 = tkinter.Label(janelaResultProva, image=test)
@@ -343,19 +332,19 @@ def finalizarProva(variaveis_resposta, assinaturaNome, cursoP):
     label1.grid(row=1, column=0, padx=10, pady=10, sticky='ew')
 
     label_pontuacao = tkinter.Label(
-        janelaResultProva, text=f"Sua Pontuação Final: {pontuacao}/3",font="Consolas 10")
+        janelaResultProva, text=f"Sua Pontuação Final: {pontuacao}/3")
     label_pontuacao.grid(row=2, column=0, padx=10, pady=10, sticky='ew')
 
     botao_Resposta = tkinter.Button(
-        janelaResultProva, text="Resolução das Questões", bg="#009FD6", fg="white", font="Consolas 10",command=ResolucaoProva)
+        janelaResultProva, text="Resolução das Questões", bg="#009FD6", fg="white", command=ResolucaoProva)
     botao_Resposta.grid(row=3, column=0, padx=10, pady=10, sticky='ew')
 
-    button = tkinter.Button(janelaResultProva, text="Tela Inicial", bg="#009FD6", fg="white",font="Consolas 10", command=lambda: [
+    button = tkinter.Button(janelaResultProva, text="Tela Inicial", bg="#009FD6", fg="white", command=lambda: [
                             (janelaResultProva.destroy()), root.deiconify(), janelaProva.destroy()])
     button.grid(row=4, column=0, padx=10, pady=10, sticky='ew')
 
     button = tkinter.Button(janelaResultProva, text="Sair do Programa", bg="#009FD6",
-                            fg="white", font="Consolas 10",command=lambda: [(janelaResultProva.destroy()), janelaProva.destroy()])
+                            fg="white", command=lambda: [(janelaResultProva.destroy()), janelaProva.destroy()])
     button.grid(row=5, column=0, padx=10, pady=10, sticky='ew')
 
 
@@ -431,5 +420,3 @@ telaInicial()
 cursor.execute("SELECT * from Participantes")
 row = cursor.fetchall()
 print(row)
-
-finalizarProva()
