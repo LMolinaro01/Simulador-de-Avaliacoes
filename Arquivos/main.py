@@ -125,32 +125,36 @@ def janelaAluno():
 
     global janela2
     janela2 = tkinter.Tk()
-    janela2.geometry("250x400")
+    janela2.geometry("480x400")
     janela2.resizable(False, False)
 
     janela2.title("Cadastro Aluno")
 
+    label = tkinter.Label(
+        janela2, text="Preencha os campos a seguir", font="Consolas 13 bold")
+    label.grid(row=0, column=1, pady=35, sticky='ew')
+
     # nome
-    label_nome = tkinter.Label(janela2, text="Nome:")
-    label_nome.grid(row=0, column=0, padx=10, pady=15)
+    label_nome = tkinter.Label(janela2, text="Nome:", font="Consolas 10")
+    label_nome.grid(row=1, column=0, padx=10, pady=15, sticky='ew')
     textoNome = tkinter.StringVar()
     nome = tkinter.Entry(janela2, textvariable=textoNome)
-    nome.grid(row=0, column=1, padx=10, pady=15)
+    nome.grid(row=1, column=1, padx=18, pady=15, sticky='ew')
 
     # senha
-    label_senha = tkinter.Label(janela2, text="Senha:")
-    label_senha.grid(row=1, column=0, padx=10, pady=15)
+    label_senha = tkinter.Label(janela2, text="Senha:", font="Consolas 10")
+    label_senha.grid(row=2, column=0, padx=10, pady=15, sticky='ew')
     textosenha = tkinter.StringVar()
-    senha = tkinter.Entry(janela2, textvariable=textosenha)
-    senha.grid(row=1, column=1, padx=10, pady=15)
+    senha = tkinter.Entry(janela2, textvariable=textosenha, show="*")
+    senha.grid(row=2, column=1, padx=18, pady=15, sticky='ew')
 
     botao_cadastrar = tkinter.Button(janela2, text="Cadastre-se", bg="#009FD6",
                                      fg="white", font="Consolas 10",command=lambda: verificarCadastroAluno(nome.get(), senha.get()))
-    botao_cadastrar.grid(row=3, column=1, padx=10, pady=10, sticky='ew')
+    botao_cadastrar.grid(row=3, column=1, padx=18, pady=10, sticky='ew')
 
     botao_voltar = tkinter.Button(janela2, text="Voltar para Tela Inicial",
                                   bg="#009FD6", fg="white", font="Consolas 10",command=lambda: voltarTelaInicial_Cadastro(janela2))
-    botao_voltar.grid(row=4, column=1, padx=10, pady=10, sticky='ew')
+    botao_voltar.grid(row=5, column=1, padx=100, pady=10, sticky='ew')
 
 
 def voltarTelaInicial_Cadastro(janela2):
@@ -228,7 +232,7 @@ def validarJanelaProva():
     label_senha = tkinter.Label(janelaValidProva, text="Senha:")
     label_senha.grid(row=1, column=0, padx=10, pady=15)
     textosenha = tkinter.StringVar()
-    senha = tkinter.Entry(janelaValidProva, textvariable=textosenha)
+    senha = tkinter.Entry(janelaValidProva, textvariable=textosenha, show="*")
     senha.grid(row=1, column=1, padx=10, pady=15)
 
     botao_cadastrar = tkinter.Button(janelaValidProva, text="Realize seu Login",
