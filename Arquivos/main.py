@@ -44,13 +44,13 @@ def telaInicial():
     root = tkinter.Tk()
     root.title("Página Inicial")
     root.resizable(False, False)
-    root.geometry("300x500")
+    #root.geometry("300x500")
 
-    label = tkinter.Label(root, text="Bem vindo ao Simulador de Avaliações!")
+    label = tkinter.Label(root, text="Bem vindo ao Simulador de Avaliações!", font="Consolas 13 bold")
     label.grid(row=0, column=1, pady=10)
 
     image1 = Image.open("Arquivos\logoEstacio2.png")
-    width, height = 200, 200
+    width, height = 400, 300
     image1.thumbnail((width, height))
     test = ImageTk.PhotoImage(image1)
     label1 = tkinter.Label(root, image=test)
@@ -124,24 +124,28 @@ def janelaAluno():
 
     global janela2
     janela2 = tkinter.Tk()
-    janela2.geometry("250x400")
+    janela2.geometry("378x380")
     janela2.resizable(False, False)
 
     janela2.title("Cadastro Aluno")
 
+    label = tkinter.Label(
+        janela2, text="Preencha os campos a seguir", font="Consolas 13 bold")
+    label.grid(row=0, column=1, pady=10, sticky='ew')
+
     # nome
     label_nome = tkinter.Label(janela2, text="Nome:")
-    label_nome.grid(row=0, column=0, padx=10, pady=15)
+    label_nome.grid(row=1, column=0, padx=10, pady=15, sticky='ew')
     textoNome = tkinter.StringVar()
     nome = tkinter.Entry(janela2, textvariable=textoNome)
-    nome.grid(row=0, column=1, padx=10, pady=15)
+    nome.grid(row=1, column=1, padx=10, pady=15, sticky='ew')
 
     # senha
     label_senha = tkinter.Label(janela2, text="Senha:")
-    label_senha.grid(row=1, column=0, padx=10, pady=15)
+    label_senha.grid(row=2, column=0, padx=10, pady=15, sticky='ew')
     textosenha = tkinter.StringVar()
     senha = tkinter.Entry(janela2, textvariable=textosenha, show="*")
-    senha.grid(row=1, column=1, padx=10, pady=15)
+    senha.grid(row=2, column=1, padx=8, pady=15, sticky='ew')
 
     botao_cadastrar = tkinter.Button(janela2, text="Cadastre-se", bg="#009FD6",
                                      fg="white", command=lambda: verificarCadastroAluno(nome.get(), senha.get()))
