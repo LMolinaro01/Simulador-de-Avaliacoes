@@ -38,13 +38,43 @@ inserir_questao("A área de um triângulo que possui 12 cm de altura e base medi
                 "54 cm²", "70 cm²", "85 cm²", "108 cm²", "3")
 connection.commit()
 
+def center(win):
+    # :param win: the main window or Toplevel window to center
+
+    # Apparently a common hack to get the window size. Temporarily hide the
+    # window to avoid update_idletasks() drawing the window in the wrong
+    # position.
+    win.update_idletasks()  # Update "requested size" from geometry manager
+
+    # define window dimensions width and height
+    width = win.winfo_width()
+    frm_width = win.winfo_rootx() - win.winfo_x()
+    win_width = width + 2 * frm_width
+
+    height = win.winfo_height()
+    titlebar_height = win.winfo_rooty() - win.winfo_y()
+    win_height = height + titlebar_height + frm_width
+
+    # Get the window position from the top dynamically as well as position from left or right as follows
+    x = win.winfo_screenwidth() // 2 - win_width // 2
+    y = win.winfo_screenheight() // 2 - win_height // 2
+
+    # this is the line that will center your window
+    win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
+
+    # This seems to draw the window frame immediately, so only call deiconify()
+    # after setting correct window position
+    win.deiconify()
+
 # TELA INICIAL
 def telaInicial():
     global root
     root = tkinter.Tk()
     root.title("Página Inicial")
     root.resizable(False, False)
-    #root.geometry("300x500")
+    root.geometry("400x600")
+
+    center(root)
 
     label = tkinter.Label(root, text="Bem vindo ao Simulador de Avaliações!", font="Consolas 13 bold")
     label.grid(row=0, column=1, pady=10)
