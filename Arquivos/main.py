@@ -159,6 +159,8 @@ def janelaAluno():
 
     janela2.title("Cadastro Aluno")
 
+    center(janela2)
+
     label = tkinter.Label(
         janela2, text="Preencha os campos a seguir", font="Consolas 13 bold")
     label.grid(row=0, column=1, pady=10, sticky='ew')
@@ -249,6 +251,8 @@ def validarJanelaProva():
     janelaValidProva = tkinter.Tk()
     janelaValidProva.geometry("378x380")
     janelaValidProva.title("Faça seu Login")
+
+    center(janelaValidProva)
 
     label = tkinter.Label(
         janelaValidProva, text="Preencha os campos a seguir", font="Consolas 13 bold")
