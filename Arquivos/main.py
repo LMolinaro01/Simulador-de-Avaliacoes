@@ -217,22 +217,26 @@ def validarJanelaProva():
 
     global janelaValidProva
     janelaValidProva = tkinter.Tk()
-    janelaValidProva.geometry("250x400")
+    janelaValidProva.geometry("378x380")
     janelaValidProva.title("Faça seu Login")
+
+    label = tkinter.Label(
+        janelaValidProva, text="Preencha os campos a seguir", font="Consolas 13 bold")
+    label.grid(row=0, column=1, pady=10, sticky='ew')
 
     # nome
     label_nome = tkinter.Label(janelaValidProva, text="Nome:")
-    label_nome.grid(row=0, column=0, padx=10, pady=15)
+    label_nome.grid(row=1, column=0, padx=10, pady=15, sticky='ew')
     textoNome = tkinter.StringVar()
     nome = tkinter.Entry(janelaValidProva, textvariable=textoNome)
-    nome.grid(row=0, column=1, padx=10, pady=15)
+    nome.grid(row=1, column=1, padx=10, pady=15, sticky='ew')
 
     # senha
     label_senha = tkinter.Label(janelaValidProva, text="Senha:")
-    label_senha.grid(row=1, column=0, padx=10, pady=15)
+    label_senha.grid(row=2, column=0, padx=10, pady=15, sticky='ew')
     textosenha = tkinter.StringVar()
     senha = tkinter.Entry(janelaValidProva, textvariable=textosenha, show="*")
-    senha.grid(row=1, column=1, padx=10, pady=15)
+    senha.grid(row=2, column=1, padx=8, pady=15, sticky='ew')
 
     botao_cadastrar = tkinter.Button(janelaValidProva, text="Realize seu Login",
                                      bg="#009FD6", fg="white", command=lambda: verificarLogin(nome.get(), senha.get()))
